@@ -13,7 +13,7 @@ static t_class *saci_class;
 
 t_glist * saci_find_parent(t_glist * glist);
 
-typedef enum{ SACI_UP, SACI_DOWN, SACI_LEFT, SACI_RIGHT, SACI_RANDOM} t_saci_mode;
+typedef enum{SACI_UP, SACI_DOWN, SACI_LEFT, SACI_RIGHT, SACI_RANDOM} t_saci_mode;
 
 typedef struct _saci {
    t_object x_obj;
