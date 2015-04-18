@@ -1,8 +1,8 @@
-#N canvas 383 150 945 529 10;
-#X obj 268 73 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#N canvas 374 165 804 400 10;
+#X obj 145 80 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X msg 310 74 stop;
-#X obj 291 149 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X msg 163 80 stop;
+#X obj 154 149 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #N canvas 117 227 837 497 teste2 0;
 #X obj 250 239 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -206,13 +206,7 @@
 #X connect 81 0 84 0;
 #X connect 82 0 81 0;
 #X connect 83 0 84 0;
-#X restore 320 360 pd teste2;
-#X obj 579 277 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X msg 622 277 stop;
-#X obj 610 345 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 594 307 metro 200;
+#X restore 593 293 pd teste2;
 #N canvas 134 156 770 510 teste 0;
 #X obj 270 88 cnv 50 400 300 empty empty dance 20 12 0 14 -233017 -66577
 0;
@@ -244,28 +238,21 @@
 #X connect 11 0 10 0;
 #X connect 12 0 13 0;
 #X coords 600 0 1 1 0 0 0;
-#X restore 260 360 pd teste;
-#X obj 610 452 saci teste2;
-#X text 556 147 <- Change the target subpatch;
-#X obj 132 281 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 133 320 saci;
-#X text 160 326 <- No argments means this patch;
-#X msg 491 182 set;
-#X text 513 181 <- This patch / subpatch;
-#X text 365 277 <- Bang it!;
-#X msg 490 206 set teste;
-#X obj 280 110 metro 200;
-#X msg 721 287 step 10;
-#X msg 719 263 step 1;
-#X msg 166 67 xstep 1000;
-#X msg 168 91 ystep 10;
-#X msg 169 181 xstep 1;
-#X msg 171 205 ystep 0;
-#X msg 169 121 xstep 50;
-#X msg 170 157 ystep 200;
-#X text 329 260 Parameters: subpatch name xstep ystep;
-#N canvas 70 540 495 209 sub 1;
+#X restore 593 272 pd teste;
+#X text 441 166 <- Change the target subpatch;
+#X obj 16 309 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 16 335 saci;
+#X text 46 335 <- No argments means this patch;
+#X msg 371 189 set;
+#X text 398 191 <- This patch / subpatch;
+#X text 245 284 <- Bang it!;
+#X msg 371 210 set teste;
+#X obj 145 113 metro 200;
+#X msg 48 98 ystep 10;
+#X msg 49 128 xstep 50;
+#X text 209 267 Parameters: subpatch name xstep ystep;
+#N canvas 58 532 495 209 sub 1;
 #X obj 360 66 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X msg 251 149;
@@ -284,69 +271,45 @@
 -1 -1 0 1;
 #X obj 182 24 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X restore 200 360 pd sub;
-#X msg 77 47 xstep \$1;
-#X obj 138 -14 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
-#X floatatom 135 14 5 0 0 0 - - -, f 5;
-#X msg 250 44 ystep \$1;
-#X msg 485 157 set teste2;
-#X obj 265 277 saci sub 10 10;
-#X msg 366 2 mode left;
-#X text 365 -20 Modes:left \, right \, up \, down \, random;
-#X msg 372 24 mode right;
-#X msg 379 43 mode up;
-#X msg 386 64 mode down;
-#X msg 393 87 mode random;
-#X text 511 33 Objects to move: bng \, cnv \, message \, text \, vu
+#X restore 593 251 pd sub;
+#X msg 370 167 set teste2;
+#X obj 145 284 saci sub 10 10;
+#X msg 246 9 mode left;
+#X text 245 -13 Modes:left \, right \, up \, down \, random;
+#X msg 252 31 mode right;
+#X msg 259 50 mode up;
+#X msg 266 71 mode down;
+#X msg 273 94 mode random;
+#X text 391 40 Objects to move: bng \, cnv \, message \, text \, vu
 \, hradio \, vradio \, vsl \, hsl \, nbx \, tgl \, gatom and objects
 name like saci;
-#X msg 509 74 objs bng cnv saci text;
-#X msg 510 97 objs vradio message nbx gatom;
-#X msg 512 122 allobjs;
-#X text 568 121 Move all objects;
-#X text 721 234 Set X step and Y step;
-#X msg 746 323 mode left;
-#X msg 752 345 mode right;
-#X msg 759 364 mode up;
-#X msg 766 385 mode down;
-#X msg 773 408 mode random;
-#X connect 0 0 18 0;
-#X connect 1 0 18 0;
-#X connect 2 0 34 0;
-#X connect 4 0 7 0;
-#X connect 5 0 7 0;
-#X connect 6 0 9 0;
-#X connect 7 0 9 0;
-#X connect 11 0 12 0;
-#X connect 14 0 34 0;
-#X connect 17 0 34 0;
-#X connect 18 0 34 0;
-#X connect 19 0 9 0;
-#X connect 20 0 9 0;
-#X connect 21 0 34 0;
-#X connect 22 0 34 0;
-#X connect 23 0 34 0;
-#X connect 24 0 34 0;
-#X connect 25 0 34 0;
-#X connect 26 0 34 0;
-#X connect 29 0 34 0;
-#X connect 30 0 31 0;
-#X connect 31 0 32 0;
-#X connect 31 0 29 0;
-#X connect 32 0 34 0;
-#X connect 33 0 34 0;
-#X connect 35 0 34 0;
-#X connect 37 0 34 0;
-#X connect 38 0 34 0;
-#X connect 39 0 34 0;
-#X connect 40 0 34 0;
-#X connect 42 0 34 0;
-#X connect 43 0 34 0;
-#X connect 44 0 34 0;
-#X connect 47 0 9 0;
-#X connect 48 0 9 0;
-#X connect 49 0 9 0;
-#X connect 50 0 9 0;
-#X connect 51 0 9 0;
+#X msg 392 81 objs bng cnv saci text;
+#X msg 392 104 objs vradio message nbx gatom;
+#X msg 392 129 allobjs;
+#X text 448 128 Move all objects;
+#X text 398 335 Developed by Flavio Schiavoni to Andre Damiao Bandeira
+- 2012;
+#X text -40 75 Vertical and horizontal step;
+#X msg -25 172 step 10;
+#X text -27 154 Set X step and Y step;
+#X text 511 273 Open subpatch;
+#X connect 0 0 13 0;
+#X connect 1 0 13 0;
+#X connect 2 0 19 0;
+#X connect 6 0 7 0;
+#X connect 9 0 19 0;
+#X connect 12 0 19 0;
+#X connect 13 0 19 0;
+#X connect 14 0 19 0;
+#X connect 15 0 19 0;
+#X connect 18 0 19 0;
+#X connect 20 0 19 0;
+#X connect 22 0 19 0;
+#X connect 23 0 19 0;
+#X connect 24 0 19 0;
+#X connect 25 0 19 0;
+#X connect 27 0 19 0;
+#X connect 28 0 19 0;
+#X connect 29 0 19 0;
+#X connect 33 0 19 0;
 #X coords 179550 0 179151 1 257 72 0;

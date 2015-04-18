@@ -273,7 +273,6 @@ void saci_setup(void) {
       A_DEFFLOAT,
       0);//Must always ends with a zero
 
-   class_sethelpsymbol(saci_class,gensym ("saci_help"));
    class_addmethod(saci_class, (t_method) saci_bang, gensym("bang"), 0);
    class_addmethod(saci_class, (t_method) saci_set_target, gensym("set"), A_DEFSYMBOL, 0);
    class_addmethod(saci_class, (t_method) saci_set_mode, gensym("mode"), A_DEFSYMBOL, 0);
